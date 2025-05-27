@@ -97,7 +97,7 @@ document.getElementById("submit").onclick = () => {
 
 // Clear
 document.getElementById("clear").onclick = () => {
-	output.innerText ="";
+	output.value ="";
 	guild1Name.value = "";
 	guild2Name.value = "";
 	codeText.value = "";
