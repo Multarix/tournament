@@ -80,7 +80,7 @@ document.getElementById("submit").onclick = () => {
 	const coinLoser = (!radioCoinToss.checked) ? guild1NameLabel.innerText : guild2NameLabel.innerText;
 	
 	const pickBan = (radioPickBan.checked) ? "Pick" : "Ban";
-	const banPick = (radioPickBan.checked) ? "Pick" : "Ban";
+	const banPick = (!radioPickBan.checked) ? "Pick" : "Ban";
 	
 	array.push("");
 	array.push(`${coinWinner} won, Chose ${pickBan}. ${coinLoser} ${banPick}s`);
