@@ -83,6 +83,9 @@ document.getElementById("submit").onclick = () => {
 	array.push(`${coinWinner} won, Chose ${pickBan}. ${coinLoser} ${banPick}s`);
 	array.push("RED: ");
 	array.push("YELLOW: ")
+	array.push("");
+	array.push(`${coinWinner} Cordy: player & player`);
+	array.push(`${coinLoser} Cordy: player & player`);
 	
 	output.value = array.join("\n");
 }
