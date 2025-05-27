@@ -4,9 +4,57 @@
 	<head>
 		<script defer src="script.js"></script>
 		<style>
+			:root {
+				--element-bg: #3a3a3a;
+				--element-bg-hover: #4a4a4a;
+				--border: 2px solid rgb(179, 179, 179);
+				--font-color: #f0f0f0;
+			}
 			body {
 				background: #121212;
-				color: #f0f0f0;
+				color: var(--font-color);
+				font-size: 20px;
+			}
+			h2 {
+				padding: 0;
+				margin-bottom: 0;
+			}
+			button {
+				border: var(--border);
+				border-radius: 5px;
+				background: var(--element-bg);
+				margin-right: 1em;
+				color: var(--font-color);
+				padding: 4px;
+				min-width: 80px;
+				min-height: 20px;
+				&:hover {
+					background: var(--element-bg-hover);
+				}
+			}
+			
+			textarea, input[type="text"] {
+				background: var(--element-bg);
+				color: var(--font-color);
+				border: var(--border);
+				border-radius: 5px;
+				padding: 2px 6px 2px 6px;
+			}
+			
+			
+			select {
+				background: var(--element-bg);
+				border: var(--border);
+				border-radius: 5px;
+				margin: 2px 0;
+				padding: 2px 2px 2px 6px;
+				color: var(--font-color);
+				min-width: 120px;
+				min-height: 30px;
+				font-weight: bolder;
+				&:hover {
+					background: var(--element-bg-hover);
+				}
 			}
 		</style>
 	</head>
@@ -18,14 +66,14 @@
 		<input id="guild2Name" name="guild2" type="text" placeholder="Guild 2"></br>
 		<button id="confirm">Confirm</button>
 		
-		<h2>Coin Toss</h2>
+		<h2>Coin Toss Winner</h2>
 		<label id="guild1NameLabel" for="g1">Guild 1</label>
 		<input checked type="radio" name="cointoss" id="g1" value="guild1"></br>
 		<label id="guild2NameLabel" for="g2">Guild 2</label>
 		<input type="radio" name="cointoss" id="g2" value="guild2"></br>
 
 		
-		<h2>Coin Toss Winner</h2>
+		<h2>Winner is...</h2>
 		<label for="pick">Picking</label>
 		<input checked type="radio" name="pickban" id="pick" value="Pick"></br>
 		<label for="pick">Banning</label>

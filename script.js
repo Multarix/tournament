@@ -42,14 +42,7 @@ function addOptions(element){
 	}
 }
 
-addOptions(ban1);
-addOptions(ban2);
-addOptions(ban3);
-addOptions(ban4);
-addOptions(picked);
-
-// Generate Code
-document.getElementById("generateCode").onclick = () => {
+function generateCode() {
 	let string = ""
 	for(let i = 0; i < 6; i++){
 		string += Math.floor(Math.random() * 10);
@@ -57,6 +50,15 @@ document.getElementById("generateCode").onclick = () => {
 	
 	codeText.value = string;
 }
+
+addOptions(ban1);
+addOptions(ban2);
+addOptions(ban3);
+addOptions(ban4);
+addOptions(picked);
+
+// Generate Code
+document.getElementById("generateCode").onclick = generateCode;
 
 // Confirm Guild Names
 document.getElementById("confirm").onclick = () => {
@@ -67,6 +69,7 @@ document.getElementById("confirm").onclick = () => {
 
 // Submit
 document.getElementById("submit").onclick = () => {
+	if(!codeText.value) generateCode();
 	const array = [];
 	array.push("-------------------------------------------------")
 	array.push(`Bans: ${[ban1.value, ban2.value, ban3.value, ban4.value].join(", ")}`);
