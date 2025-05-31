@@ -1,0 +1,13 @@
+:root {
+	--element-bg: #3a3a3a;
+	--element-bg-hover: #4a4a4a;
+	--border: 2px solid rgb(179, 179, 179);
+	--border-radius: 12px;
+	--font-color: #f0f0f0;
+}
+
+body {
+	background: #121212;
+	color: var(--font-color);
+	font-size: 40px;
+}

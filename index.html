@@ -1,112 +1,91 @@
 <!DOCTYPE html>
 <html>
-	<title>T&L Tournament</title>
-	<head>
-		<script defer src="script.js"></script>
-		<style>
-			:root {
-				--element-bg: #3a3a3a;
-				--element-bg-hover: #4a4a4a;
-				--border: 2px solid rgb(179, 179, 179);
-				--font-color: #f0f0f0;
-			}
-			body {
-				background: #121212;
-				color: var(--font-color);
-				font-size: 16px;
-			}
-			h2 {
-				padding: 0;
-				margin-bottom: 0;
-			}
-			button {
-				border: var(--border);
-				border-radius: 5px;
-				background: var(--element-bg);
-				margin-right: 1em;
-				color: var(--font-color);
-				padding: 4px;
-				min-width: 80px;
-				min-height: 20px;
-				&:hover {
-					background: var(--element-bg-hover);
-				}
-			}
-			
-			textarea, input[type="text"] {
-				background: var(--element-bg);
-				color: var(--font-color);
-				border: var(--border);
-				border-radius: 5px;
-				padding: 2px 6px 2px 6px;
-			}
-			
-			
-			select {
-				background: var(--element-bg);
-				border: var(--border);
-				border-radius: 5px;
-				margin: 2px 0;
-				padding: 2px 2px 2px 6px;
-				color: var(--font-color);
-				min-width: 120px;
-				min-height: 30px;
-				font-weight: bolder;
-				&:hover {
-					background: var(--element-bg-hover);
-				}
-			}
-			
-			.first {
-				margin-top: 0;
-			}
-		</style>
-	</head>
-	<body>
-		<h2 class="first">Guild Names</h2>
-		<label for="guild1">Guild 1 name</label>
-		<input id="guild1Name" name="guild1" type="text" placeholder="Guild 1"></br>
-		<label for="guild1">Guild 2 name</label>
-		<input id="guild2Name" name="guild2" type="text" placeholder="Guild 2"></br>
-		<button id="confirm">Confirm</button>
-		
-		<h2>Coin Toss Winner</h2>
-		<label id="guild1NameLabel" for="g1">Guild 1</label>
-		<input checked type="radio" name="cointoss" id="g1" value="guild1"></br>
-		<label id="guild2NameLabel" for="g2">Guild 2</label>
-		<input type="radio" name="cointoss" id="g2" value="guild2"></br>
 
-		
-		<h2>Winner is...</h2>
-		<label for="pick">Picking</label>
-		<input checked type="radio" name="pickban" id="pick" value="Pick"></br>
-		<label for="pick">Banning</label>
-		<input type="radio" name="pickban" id="ban" value="Ban"></br>
-		
-		<h2>Bans</h2>
-		<label for="pick">Ban 1</label>
-		<select id="ban1"></select>
-		</br>
-		<label for="pick">Ban 2</label>
-		<select id="ban2"></select>
-		</br>
-		<label for="pick">Ban 3</label>
-		<select id="ban3"></select>
-		</br>
-		<label for="pick">Ban 4</label>
-		<select id="ban4"></select>
-		
-		<h2>Picked</h2>
-		<label for="pick">Map to Play:</label>
-		<select id="picked"></select>
-		
-		<h2>Code</h2>
-		<input readonly type="text" name="code" id="code" placeholder="000000">
-		<button id="generateCode">Generate</button></br>
-		</br>
-		<button id="submit">Submit</button><button id="clear">Clear</button>
-		
-		<h2>Output</h2>
-		<textarea cols='50' rows='12' id="output" style="resize:none;white-space:pre-wrap;"></textarea>
-	</body>
+<head>
+	<title>T&L Tournament</title>
+	<script defer src="/script.js"></script>
+	<link href="/style.css" rel="stylesheet">
+
+	<meta property="og:title" content="T&L Tournament">
+	<meta property="og:description" content="Throne and Liberty Tournament Assistant">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="multarix.com">
+	<meta property="og:url" content="tnl.multarix.com">
+	<meta content="#764740" data-react-helmet="true" name="theme-color">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="container-row">
+			<input id="guild1Name" type="text" placeholder="Guild 1">
+			<input id="guild2Name" type="text" placeholder="Guild 2">
+		</div>
+		<button id="confirmNames">Confirm</button>
+	</div>
+	
+	<br />
+	
+	<div class="container">
+		<div class="container-row">
+			<select id="coinTossWinner">
+				<option value="Guild1" id="coinTossGuild1Name">Guild 1</option>
+				<option value="Guild2" id="coinTossGuild2Name">Guild 2</option>
+			</select>
+			<span>is</span>
+			<select id="pickBan">
+				<option value="pick">Picking</option>
+				<option value="ban">Banning</option>
+			</select>
+		</div>
+	</div>
+	
+	<br />
+	
+	<div class="container">
+		<div class="container-row">
+			<select id="ban1">
+				<option value="select" disabled hidden>Ban 1</option>
+			</select>
+			<select id="ban2">
+				<option value="select" disabled hidden>Ban 2</option>
+			</select>
+			<select id="ban3">
+				<option value="select" disabled hidden>Ban 3</option>
+			</select>
+			<select id="ban4">
+				<option value="select" disabled hidden>Ban 4</option>
+			</select>
+		</div>
+	</div>
+	
+	<br />
+	
+	<div class="container">
+		<div class="container-row">
+			<label for="pick" >Map to Play:</label>
+			<select id="picked">
+				<option value="select" disabled hidden>Select Map</option>
+			</select>
+		</div>
+	</div>
+	
+	<br />
+	
+	<div class="container">
+		<div class="container-row">
+			<input readonly type="text" name="code" id="code" placeholder="000000">
+			<button id="generateCode">Generate</button>
+		</div>
+	</div>
+	<br />
+	<div class="container">
+		<div class="container-row">
+			<button id="submit">Submit</button>
+			<button id="clear">Clear</button>
+		</div>
+		<textarea cols='80' rows='15' id="output" style="resize:none;white-space:pre-wrap;"></textarea>
+	</div>
+</body>
+
 </html>

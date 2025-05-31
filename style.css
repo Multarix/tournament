@@ -1,0 +1,88 @@
+:root {
+	--element-bg: #3a3a3a;
+	--element-bg-hover: #4a4a4a;
+	--border: 2px solid rgb(179, 179, 179);
+	--border-radius: 12px;
+	--font-color: #f0f0f0;
+}
+
+body {
+	background: #121212;
+	color: var(--font-color);
+	font-size: 40px;
+}
+
+h2 {
+	padding: 0;
+	margin: 0;
+}
+
+
+textarea {
+	background: var(--element-bg);
+	color: var(--font-color);
+	border: var(--border);
+	border-radius: 5px;
+	padding: 2px 6px 2px 6px;
+}
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	gap: 0.25em;
+}
+
+.container-row {
+	display: flex;
+	flex-direction: row;
+	gap: 0.75em;
+}
+
+input[type="text"] {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	background: var(--element-bg);
+	color: var(--font-color);
+	width: 400px;
+	padding: 2px 12px 2px 12px;
+	font-size: 40px;
+}
+
+
+select {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	background: var(--element-bg);
+	color: var(--font-color);
+	padding: 6px 12px;
+	min-width: 200px;
+	min-height: 30px;
+
+	font-size: 40px;
+	scroll-snap-type: y mandatory;
+
+	&:hover {
+		background: var(--element-bg-hover);
+	}
+}
+
+
+button {
+	border: var(--border);
+	border-radius: var(--border-radius);
+	background: var(--element-bg);
+	margin: 0 0.5em;
+	color: var(--font-color);
+	padding: 0.5em;
+	width: 120px;
+
+	/* max-width: 150px; */
+	font-size: 20px;
+
+	&:hover {
+		background: var(--element-bg-hover);
+	}
+}
