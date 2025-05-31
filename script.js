@@ -52,8 +52,6 @@ function passPickedBanForward(matchNumber){
 
 
 function passBans(banSelect1, banSelect2, banSelect3, banSelect4, matchNumber){
-	console.log(banSelect1, banSelect2, banSelect3, banSelect4, matchNumber);
-	
 	let picker = pick1;
 	if(matchNumber === 1) picker = pick2;
 	if(matchNumber === 2) picker = pick3;
