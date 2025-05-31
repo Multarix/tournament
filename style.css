@@ -1,88 +1,201 @@
 :root {
-	--element-bg: #3a3a3a;
+	--element-bg: #646464;
 	--element-bg-hover: #4a4a4a;
+	--element-bg-active: #30b43b;
 	--border: 2px solid rgb(179, 179, 179);
 	--border-radius: 12px;
 	--font-color: #f0f0f0;
 }
 
 body {
+	color: #121212;
 	background: #121212;
 	color: var(--font-color);
-	font-size: 40px;
+	font-size: 25px;
 }
-
-h2 {
-	padding: 0;
-	margin: 0;
-}
-
-
-textarea {
-	background: var(--element-bg);
-	color: var(--font-color);
-	border: var(--border);
-	border-radius: 5px;
-	padding: 2px 6px 2px 6px;
-}
-
 
 .container {
+	width: 768px;
+	height: fit-content;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 auto;
-	gap: 0.25em;
+	gap: 1em;
+	
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.container-row {
+.tabs-button {
 	display: flex;
 	flex-direction: row;
-	gap: 0.75em;
+	gap: 0;
+	align-items: center;
 }
 
-input[type="text"] {
-	border: var(--border);
-	border-radius: var(--border-radius);
-	background: var(--element-bg);
-	color: var(--font-color);
-	width: 400px;
-	padding: 2px 12px 2px 12px;
-	font-size: 40px;
+.tabs-button > button:first-child {
+	border-top-left-radius: var(--border-radius);
+	border-bottom-left-radius: var(--border-radius);
+}
+
+.tabs-button > button:last-child {
+	border-top-right-radius: var(--border-radius);
+	border-bottom-right-radius: var(--border-radius);
 }
 
 
-select {
-	border: var(--border);
-	border-radius: var(--border-radius);
+#match1Button, #match2Button, #match3Button {
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	font-weight: bolder;
 	background: var(--element-bg);
-	color: var(--font-color);
-	padding: 6px 12px;
-	min-width: 200px;
-	min-height: 30px;
-
-	font-size: 40px;
-	scroll-snap-type: y mandatory;
-
+	border: var(--border);
+	border-right: unset;
+	
 	&:hover {
 		background: var(--element-bg-hover);
+		cursor: pointer;
+	}
+	
+	&:disabled {
+		background: var(--element-bg-active);
+		color: black;
+	}
+	
+	&:disabled:hover {
+		background: var(--element-bg-active);
+		color: black;
+		cursor: unset;
 	}
 }
 
+#match3Button {
+	border-right: var(--border);
+}
+
+.tabs-content {
+	width: 100%;
+	height: fit-content;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	background: #1a1a1a;
+}
+
+
+.tab {
+	padding: 2em 2em;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	padding-bottom: 0;
+}
+
+.guildNames, .coinToss, .bans {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+}
+
+.guildNames > input {
+	flex-grow: 1;
+}
+
+.bans > select, .coinToss > select {
+	flex-grow: 1;
+}
+
+.coinToss > span {
+	text-align: center;
+	flex-grow: 0;
+	width: 40px;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.generateBtn {
+	padding: 0.25em 0.5em;
+	border: var(--border);
+	background: #367ad4;
+	
+	&:hover {
+		color: #000;
+		background: #4193ff;
+		cursor: pointer;
+	}
+}
+
+#submit1, #submit2, #submit3 {
+	display: block;
+	margin: 0 auto;
+	
+	background: #30b43b;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	
+	padding: 0.5em 1em;
+	font-weight: bolder;
+	
+	width: 150px;
+	
+	&:hover {
+		color: #000;
+		border-color: #fff;
+		background: #47ff56;
+		cursor: pointer;
+	}
+}
+
+.output {
+	margin: 0 auto;
+	resize: none;
+	width: 410px;
+	height: 180px;
+}
+
+#reset {
+	display: block;
+	margin: 1em auto 2em auto;
+	
+	background: #d63939;
+	border: var(--border);
+	border-radius: var(--border-radius);
+	
+	padding: 0.5em 1em;
+	font-weight: bolder;
+	
+	&:hover {
+		color: #000;
+		border-color: #fff;
+		background: #ff4444;
+		cursor: pointer;
+	}
+}
+
+select > option:disabled {
+	background: #121212;
+	color: #979797;
+}
 
 button {
-	border: var(--border);
-	border-radius: var(--border-radius);
-	background: var(--element-bg);
-	margin: 0 0.5em;
-	color: var(--font-color);
-	padding: 0.5em;
-	width: 120px;
-
-	/* max-width: 150px; */
 	font-size: 20px;
+	font-weight: bolder;
+}
+span { padding: 0.25em 0; font-weight: bolder; }
+input[type="text"], select, option {
+	font-size: 20px;
+	padding: 0.25em 0.5em;
+	background: var(--element-bg);
+	border: var(--border);
+	color: #fff;
+}
 
-	&:hover {
-		background: var(--element-bg-hover);
-	}
+input[type="text"]:disabled {
+	background-color: #121212;
+	color: #979797;
 }

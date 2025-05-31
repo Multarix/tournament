@@ -12,79 +12,178 @@
 	<meta property="og:site_name" content="multarix.com">
 	<meta property="og:url" content="tnl.multarix.com">
 	<meta content="#764740" data-react-helmet="true" name="theme-color">
-
+	
 </head>
-
 <body>
 	<div class="container">
-		<div class="container-row">
-			<input id="guild1Name" type="text" placeholder="Guild 1">
-			<input id="guild2Name" type="text" placeholder="Guild 2">
+		
+		<div class="tabs-button">
+			<button disabled id="match1Button">Match 1</button>
+			<button id="match2Button">Match 2</button>
+			<button id="match3Button">Match 3</button>
 		</div>
-		<button id="confirmNames">Confirm</button>
-	</div>
-	
-	<br />
-	
-	<div class="container">
-		<div class="container-row">
-			<select id="coinTossWinner">
-				<option value="Guild1" id="coinTossGuild1Name">Guild 1</option>
-				<option value="Guild2" id="coinTossGuild2Name">Guild 2</option>
-			</select>
-			<span>is</span>
-			<select id="pickBan">
-				<option value="pick">Picking</option>
-				<option value="ban">Banning</option>
-			</select>
+		
+		
+		<div class="tabs-content">
+			<section class="tab" id="match1Content">
+				<div class="guildNames">
+					<input id="guildName1" type="text" placeholder="Guild 1 Name">
+					<input id="guildName2" type="text" placeholder="Guild 2 Name">
+				</div>
+				
+				<div class="coinToss">
+					<select id="coinTossWinner1">
+						<option id="coin1" value="Guild_1">Guild 1</option>
+						<option id="coin2" value="Guild_2">Guild 2</option>
+					</select>
+					<span>are</span>
+					<select id="pickBan1">
+						<option value="pick">Picking</option>
+						<option value="ban">Banning</option>
+					</select>
+				</div>
+				
+				<div class="bans">
+					<select id="ban1">
+						<option value="Ban1" selected disabled hidden>Ban 1</option>
+					</select>
+					<select id="ban2">
+						<option value="Ban2" selected disabled hidden>Ban 2</option>
+					</select>
+					<select id="ban3">
+						<option value="Ban3" selected disabled hidden>Ban 3</option>
+					</select>
+					<select id="ban4">
+						<option value="Ban4" selected disabled hidden>Ban 4</option>
+					</select>
+				</div>
+				
+				<div class="center">
+					<span>Map to Play:</span>
+					<select id="pick1">
+						<option value="Not Chosen" selected disabled hidden>Select Map</option>
+					</select>
+				</div>
+				
+				<div class="center">
+					<input type="text" id="match1Code" placeholder="000000" readonly>
+					<button class="generateBtn" id="generateMatch1Code">Generate</button>
+				</div>
+				
+				<button id="submit1">Submit</button>
+				
+				<div class="center">
+					<textarea class="output" id="match1Output"></textarea>
+				</div>
+			</section>
+			
+			
+			<section class="tab" id="match2Content" style="display: none;">
+				<div class="guildNames">
+					<input id="guildName3" type="text" disabled readonly placeholder="Guild 1 Name">
+					<input id="guildName4" type="text" disabled readonly placeholder="Guild 2 Name">
+				</div>
+				
+				<div class="coinToss">
+					<select id="coinTossWinner2">
+						<option id="coin3" value="Guild_1">Guild 1</option>
+						<option id="coin4" value="Guild_2">Guild 2</option>
+					</select>
+					<span>are</span>
+					<select id="pickBan2">
+						<option value="pick">Picking</option>
+						<option value="ban">Banning</option>
+					</select>
+				</div>
+				
+				<div class="bans">
+					<select id="ban5">
+						<option value="Ban1" selected disabled hidden>Ban 1</option>
+					</select>
+					<select id="ban6">
+						<option value="Ban2" selected disabled hidden>Ban 2</option>
+					</select>
+					<select id="ban7">
+						<option value="Ban3" selected disabled hidden>Ban 3</option>
+					</select>
+					<select id="ban8">
+						<option value="Ban4" selected disabled hidden>Ban 4</option>
+					</select>
+				</div>
+				
+				<div class="center">
+					<span>Map to Play:</span>
+					<select id="pick2">
+						<option value="Not Chosen" selected disabled hidden>Select Map</option>
+					</select>
+				</div>
+				
+				<div class="center">
+					<input type="text" id="match2Code" placeholder="000000" readonly>
+					<button class="generateBtn" id="generateMatch2Code">Generate</button>
+				</div>
+				
+				<button id="submit2">Submit</button>
+				
+				<div class="center">
+					<textarea class="output" id="match2Output"></textarea>
+				</div>
+			</section>
+			
+			
+			<section class="tab" id="match3Content" style="display: none;">
+				<div class="guildNames">
+					<input id="guildName5" type="text" disabled readonly placeholder="Guild 1 Name">
+					<input id="guildName6" type="text" disabled readonly placeholder="Guild 2 Name">
+				</div>
+				
+				<div class="coinToss">
+					<select id="coinTossWinner3">
+						<option id="coin5" value="Guild_1">Guild 1</option>
+						<option id="coin6" value="Guild_2">Guild 2</option>
+					</select>
+					<span>are</span>
+					<select id="pickBan3">
+						<option value="pick">Picking</option>
+						<option value="ban">Banning</option>
+					</select>
+				</div>
+				
+				<div class="bans">
+					<select id="ban9">
+						<option value="Ban1" selected disabled hidden>Ban 1</option>
+					</select>
+					<select id="ban10">
+						<option value="Ban2" selected disabled hidden>Ban 2</option>
+					</select>
+					<select id="ban11">
+						<option value="Ban3" selected disabled hidden>Ban 3</option>
+					</select>
+					<select id="ban12">
+						<option value="Ban4" selected disabled hidden>Ban 4</option>
+					</select>
+				</div>
+				
+				<div class="center">
+					<span>Map to Play:</span>
+					<select id="pick3">
+						<option value="Not Chosen" selected disabled hidden>Select Map</option>
+					</select>
+				</div>
+				
+				<div class="center">
+					<input type="text" id="match3Code" placeholder="000000" readonly>
+					<button class="generateBtn" id="generateMatch3Code">Generate</button>
+				</div>
+				
+				<button id="submit3">Submit</button>
+				
+				<div class="center">
+					<textarea class="output" id="match3Output"></textarea>
+				</div>
+			</section>
+			<button id="reset">RESET EVERYTHING</button>
 		</div>
-	</div>
-	
-	<br />
-	
-	<div class="container">
-		<div class="container-row">
-			<select id="ban1">
-				<option value="select" disabled hidden selected>Ban 1</option>
-			</select>
-			<select id="ban2">
-				<option value="select" disabled hidden selected>Ban 2</option>
-			</select>
-			<select id="ban3">
-				<option value="select" disabled hidden selected>Ban 3</option>
-			</select>
-			<select id="ban4">
-				<option value="select" disabled hidden selected>Ban 4</option>
-			</select>
-		</div>
-	</div>
-	
-	<br />
-	
-	<div class="container">
-		<div class="container-row">
-			<label for="pick" >Map to Play:</label>
-			<select id="picked">
-				<option value="select" disabled hidden selected>Select Map</option>
-			</select>
-		</div>
-	</div>
-	
-	<br />
-	
-	<div class="container">
-		<div class="container-row">
-			<input readonly type="text" name="code" id="code" placeholder="000000">
-			<button id="generateCode">Generate</button>
-		</div>
-	</div>
-	<br />
-	<div class="container">
-		<div class="container-row">
-			<button id="submit">Submit</button>
-			<button id="clear">Clear</button>
-		</div>
-		<textarea cols='80' rows='15' id="output" style="resize:none;white-space:pre-wrap;"></textarea>
 	</div>
 </body>
 
