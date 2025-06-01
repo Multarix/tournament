@@ -145,21 +145,21 @@ function submitMatch(matchNumber){
 	
 	const array = [];
 	array.push("-------------------------------------------------")
-	array.push(`Title: \`${coinWinner}\` vs \`${coinLoser}\``)
+	array.push(`Title: ${coinWinner} vs ${coinLoser}`);
 	array.push(`Bans: ${(permaBans.length > 0) ? `*${permaBans.join("*, *")}*, ` : ""}${bans[matchNumber].join(", ")}`);
 	array.push(`Pick: ${picks[matchNumber].value}`);
 	array.push(`Code: ${code[matchNumber].value}`);
 	array.push("");
 	array.push(`\`${coinWinner}\` won, they are ${winnerPickBan} \`${coinLoser}\` is ${loserPickBan}`);
 	array.push("RED: ");
-	array.push("YELLOW: ")
+	array.push("YELLOW: ");
 	array.push("");
 	array.push(`\`${coinWinner}\` Cordy: player & player`);
 	array.push(`\`${coinLoser}\` Cordy: player & player`);
 	
 	output[matchNumber].value = array.join("\n");
 	
-	passPickedBanForward(matchNumber)
+	passPickedBanForward(matchNumber);
 }
 
 const match1Button = document.getElementById("match1Button");
