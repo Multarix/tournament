@@ -121,6 +121,15 @@ function submitMatch(matchNumber){
 	const code = [match1Code, match2Code, match3Code];
 	const output = [output1, output2, output3];
 	
+	const coinWinner = coinWinners[matchNumber];
+	const coinLoser = (coinWinner === guildNameCoin1.value) ? guildNameCoin2.value : guildNameCoin1.value;
+	
+	const winnerChose = pickBans[matchNumber]
+	const LoserChose = (winnerChose === "pick") ? "ban" : "pick";
+	
+	const winnerPickBan =  `${winnerChose}${(winnerChose === "ban") ? "n" : ""}ing.`
+	const loserPickBan = `${LoserChose}${(LoserChose === "ban") ? "n" : ""}ing.`
+	
 	switch(matchNumber){
 		case 0:
 			break;
@@ -136,23 +145,17 @@ function submitMatch(matchNumber){
 	
 	const array = [];
 	array.push("-------------------------------------------------")
+	array.push(`Title: \`${coinWinner}\` vs \`${coinLoser}\``)
 	array.push(`Bans: ${(permaBans.length > 0) ? `*${permaBans.join("*, *")}*, ` : ""}${bans[matchNumber].join(", ")}`);
 	array.push(`Pick: ${picks[matchNumber].value}`);
 	array.push(`Code: ${code[matchNumber].value}`);
-	
-	const coinWinner = coinWinners[matchNumber];
-	const coinLoser = (coinWinner === guildNameCoin1.value) ? guildNameCoin2.value : guildNameCoin1.value;
-	
-	const winnerChose = pickBans[matchNumber]
-	const LoserChose = (winnerChose === "pick") ? "ban" : "pick";
-	
 	array.push("");
-	array.push(`${coinWinner} won, Chose ${winnerChose}. ${coinLoser} ${LoserChose}s.`);
+	array.push(`\`${coinWinner}\` won, they are ${winnerPickBan} \`${coinLoser}\` is ${loserPickBan}`);
 	array.push("RED: ");
 	array.push("YELLOW: ")
 	array.push("");
-	array.push(`${coinWinner} Cordy: player & player`);
-	array.push(`${coinLoser} Cordy: player & player`);
+	array.push(`\`${coinWinner}\` Cordy: player & player`);
+	array.push(`\`${coinLoser}\` Cordy: player & player`);
 	
 	output[matchNumber].value = array.join("\n");
 	
