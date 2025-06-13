@@ -5,7 +5,6 @@ const riftstones = [
 	"Grand Aelon",
 	"Talus",
 	"Kowazan",
-	"Malakar",
 	"Chernobog",
 	"Daigon",
 	"Leviathan",
