@@ -140,14 +140,20 @@ function submitMatch(matchNumber){
 			break;
 	}
 	
-	if(code[matchNumber].value === "") generateCode(code[matchNumber]);
+	if(match1Code.value === "") generateCode(match1Code);
+	
+	let matchCode = (code[matchNumber].value === "") ? match1Code.value : code[matchNumber].value;
+	if(code[matchNumber].value === ""){ // First match code will always be set by this point, so will never enter
+		if(code[matchNumber - 1].value !== "") matchCode = code[matchNumber - 1].value;
+	}
+
 	
 	const array = [];
 	array.push("-------------------------------------------------")
 	array.push(`Title: ${coinWinner} vs ${coinLoser}`);
 	array.push(`Bans: ${(permaBans.length > 0) ? `*${permaBans.join("*, *")}*, ` : ""}${bans[matchNumber].join(", ")}`);
 	array.push(`Pick: ${picks[matchNumber].value}`);
-	array.push(`Code: ${code[matchNumber].value}`);
+	array.push(`Code: ${matchCode}`);
 	array.push("");
 	array.push(`\`${coinWinner}\` won, they are ${winnerPickBan} \`${coinLoser}\` is ${loserPickBan}`);
 	array.push("RED: ");
